@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 const DURATION_MS = 4000;
@@ -92,7 +93,10 @@ export default function LoadingScreen() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <CrescentOrnament />
+            <div className="flex flex-col items-center gap-4">
+              <Image src="/sunnah-logo.png" alt="" width={72} height={72} priority className="rounded-full border border-gold/60" />
+              <CrescentOrnament />
+            </div>
           </motion.div>
 
           <div className="relative z-10 flex w-full flex-col items-center gap-8 text-center sm:gap-12">
