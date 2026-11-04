@@ -1,0 +1,36 @@
+export type WhyItem = { id: "halal" | "pure" | "delivery" | "return"; title: string; text: string };
+
+export const sectionText = {
+  whyTitle: "কেন Sunnah Haven?",
+  whySubtitle: "আপনার বিশ্বাসের জায়গা আমাদের অঙ্গীকার",
+  whyItems: [
+    { id: "halal", title: "১০০% হালাল", text: "সব পণ্য হালাল ও সুন্নাহসম্মত" },
+    { id: "pure", title: "খাঁটি পণ্য", text: "ভেজালমুক্ত, মান যাচাই করা" },
+    { id: "delivery", title: "দ্রুত ডেলিভারি", text: "সারা বাংলাদেশে দ্রুত পৌঁছে দিই" },
+    { id: "return", title: "৭ দিনে রিটার্ন", text: "পছন্দ না হলে সহজ রিটার্ন" },
+  ] satisfies WhyItem[],
+  hadithTitle: "আজকের হাদিস",
+  hadithNote: "নমুনা লেখা, যাচাইকৃত হাদিস পরে বসবে",
+  prayerTitle: "আজকের নামাজের সময়",
+  prayerCity: "ঢাকা",
+  nextPrayer: "পরের ওয়াক্ত",
+  remaining: "বাকি",
+  prayerError: "নামাজের সময় এখন লোড করা যাচ্ছে না। একটু পরে চেষ্টা করুন।",
+  prayerLoading: "লোড হচ্ছে...",
+  prayerNames: {
+    Fajr: "ফজর",
+    Dhuhr: "যোহর",
+    Asr: "আসর",
+    Maghrib: "মাগরিব",
+    Isha: "ইশা",
+  },
+  reviewsTitle: "ক্রেতাদের মতামত",
+  reviewsSubtitle: "যারা আমাদের উপর আস্থা রেখেছেন",
+  joinTitle: "অফারের খবর সবার আগে পান",
+  joinSubtitle: "আমাদের হোয়াটসঅ্যাপ গ্রুপে যুক্ত হোন বা ফোন নম্বর দিন",
+  joinWhatsApp: "হোয়াটসঅ্যাপ গ্রুপে যুক্ত হোন",
+  joinPlaceholder: "আপনার ফোন নম্বর (01XXXXXXXXX)",
+  joinSubmit: "সাবস্ক্রাইব",
+  joinInvalid: "সঠিক ফোন নম্বর দিন (01XXXXXXXXX)",
+  joinSuccess: "জাযাকাল্লাহু খাইরান! আপনি যুক্ত হয়েছেন।",
+};
