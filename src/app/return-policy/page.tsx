@@ -1,5 +1,9 @@
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import type { Metadata } from "next";
+import LegalPage from "@/components/ui/LegalPage";
+import { returnPolicy } from "@/data/pages";
 
-export default function Page() {
-  return <PlaceholderPage title="রিটার্ন পলিসি" />;
+export const metadata: Metadata = { title: "রিটার্ন পলিসি | Sunnah Haven" };
+
+export default function ReturnPolicyPage() {
+  return <LegalPage {...returnPolicy} />;
 }

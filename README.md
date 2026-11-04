@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sunnah Haven
 
-## Getting Started
+সুন্নাহসম্মত ইসলামিক লাইফস্টাইল ই-কমার্স সাইটের ফ্রন্টএন্ড (Next.js, TypeScript, Tailwind CSS, Framer Motion)।
 
-First, run the development server:
+## চালানোর নিয়ম
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # প্রোডাকশন বিল্ড
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## কোথায় কী বদলাবেন
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| কী | কোথায় |
+|---|---|
+| ফোন নম্বর, WhatsApp নম্বর, সাইট URL | `src/lib/constants.ts` |
+| রঙ ও ফন্ট | `src/app/globals.css`, `src/app/layout.tsx` |
+| পণ্য, ক্যাটাগরি, রিভিউ | `src/data/products.ts`, `categories.ts`, `reviews.ts` |
+| হাদিস (যাচাই করে বসান) | `src/data/hadith.ts` |
+| ডেলিভারি চার্জ ও জেলা | `src/data/checkout.ts` |
+| রিটার্ন/প্রাইভেসি পলিসি, যোগাযোগ, FAQ | `src/data/pages.ts` |
+| পণ্যের ছবি | `public/products/<slug>.jpg` |
+| হিরো ছবি | `public/hero/<category>.jpg` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## নোট
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- এখন সব ডেটা ডামি, ব্যাকএন্ড পরে যুক্ত হবে।
+- হাদিস ও পলিসির লেখা নমুনা, লাইভ করার আগে যাচাই করুন।

@@ -11,7 +11,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BottomNav from "@/components/layout/BottomNav";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import InstallPrompt from "@/components/layout/InstallPrompt";
 import { CartProvider } from "@/lib/cart";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const amiri = Amiri({
@@ -43,8 +45,19 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Sunnah Haven",
-  description: "সুন্নাহ অনুযায়ী ইসলামিক লাইফস্টাইল পণ্যের বিশ্বস্ত ঠিকানা",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    locale: "bn_BD",
+  },
+  twitter: { card: "summary", title: SITE_NAME, description: SITE_DESCRIPTION },
+  appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: "black-translucent" },
 };
 
 export const viewport: Viewport = {
@@ -75,6 +88,7 @@ export default function RootLayout({
           <Footer />
           <BottomNav />
           <WhatsAppButton />
+          <InstallPrompt />
         </CartProvider>
       </body>
     </html>

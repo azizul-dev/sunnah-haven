@@ -1,5 +1,11 @@
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import type { Metadata } from "next";
+import QiblaView from "@/components/tools/QiblaView";
 
-export default function Page() {
-  return <PlaceholderPage title="কিবলা ও নামাজের সময়" />;
+export const metadata: Metadata = {
+  title: "কিবলা ও নামাজের সময় | Sunnah Haven",
+  description: "আপনার অবস্থান অনুযায়ী কিবলার দিক ও নামাজের সময়।",
+};
+
+export default function QiblaPage() {
+  return <QiblaView />;
 }

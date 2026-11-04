@@ -7,6 +7,7 @@ import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import CartItemRow from "@/components/product/CartItemRow";
 import CartSummary from "@/components/product/CartSummary";
+import HadiyaPanel from "@/components/product/HadiyaPanel";
 import { FREE_DELIVERY_ABOVE, cartText, cartUi } from "@/data/checkout";
 import { useCart } from "@/lib/cart";
 import { formatPrice, toBanglaNumber } from "@/lib/format";
@@ -69,6 +70,7 @@ export default function CartView() {
               <CartItemRow key={item.slug} item={item} />
             ))}
           </ul>
+          <HadiyaPanel />
         </div>
 
         <CartSummary subtotal={subtotal} delivery={delivery} />

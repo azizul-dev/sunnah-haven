@@ -1,5 +1,11 @@
-import PlaceholderPage from "@/components/ui/PlaceholderPage";
+import type { Metadata } from "next";
+import TasbihCounter from "@/components/tools/TasbihCounter";
 
-export default function Page() {
-  return <PlaceholderPage title="ডিজিটাল তাসবিহ" />;
+export const metadata: Metadata = {
+  title: "ডিজিটাল তাসবিহ | Sunnah Haven",
+  description: "ফোনে ট্যাপ করে তাসবিহ গণনা করুন।",
+};
+
+export default function TasbihPage() {
+  return <TasbihCounter />;
 }

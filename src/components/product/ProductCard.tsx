@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ShoppingBag, Star } from "lucide-react";
-import ArchFrame from "@/components/ui/ArchFrame";
+import ArchImage from "@/components/ui/ArchImage";
 import Button from "@/components/ui/Button";
 import ProductIcon from "@/components/ui/ProductIcon";
 import { homeText } from "@/data/home";
@@ -32,11 +32,11 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="flex h-full flex-col rounded-2xl border border-gold/30 bg-white p-3 shadow-sm card-hover dark:bg-emerald-deep">
-      <Link href={`/product/${product.slug}`} className="block">
+      <Link href={`/product/${product.slug}`} className="group block">
         <div className="relative">
-          <ArchFrame className="h-40 w-full">
-            <ProductIcon category={product.category} size={48} />
-          </ArchFrame>
+          <ArchImage src={`/products/${product.slug}.jpg`} alt={product.name} sizes="(min-width: 1024px) 20vw, 45vw" className="h-40 w-full">
+              <ProductIcon category={product.category} size={48} />
+            </ArchImage>
           <div className="absolute left-2 top-2 flex flex-col gap-1">
             {product.isNew && (
               <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-semibold text-emerald-night">

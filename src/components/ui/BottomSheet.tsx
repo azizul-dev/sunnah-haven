@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { shopText } from "@/data/shop";
@@ -13,6 +14,12 @@ type BottomSheetProps = {
 };
 
 export default function BottomSheet({ open, title, onClose, children }: BottomSheetProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     if (!open) return;
     const previous = document.body.style.overflow;
@@ -27,7 +34,9 @@ export default function BottomSheet({ open, title, onClose, children }: BottomSh
     };
   }, [open, onClose]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-[60]">
@@ -63,6 +72,7 @@ export default function BottomSheet({ open, title, onClose, children }: BottomSh
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }

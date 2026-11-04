@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Trash2 } from "lucide-react";
-import ArchFrame from "@/components/ui/ArchFrame";
+import ArchImage from "@/components/ui/ArchImage";
 import ProductIcon from "@/components/ui/ProductIcon";
 import QuantityStepper from "@/components/ui/QuantityStepper";
 import { cartText, cartUi } from "@/data/checkout";
@@ -17,9 +17,9 @@ export default function CartItemRow({ item }: { item: CartItem }) {
   return (
     <li className="card-hover flex gap-4 rounded-2xl border border-gold/30 bg-white p-3 dark:bg-emerald-deep sm:p-4">
       <Link href={`/product/${item.slug}`} className="shrink-0" aria-label={item.name}>
-        <ArchFrame className="h-28 w-20 sm:h-32 sm:w-24">
-          {category && <ProductIcon category={category} size={34} />}
-        </ArchFrame>
+        <ArchImage src={`/products/${item.slug}.jpg`} alt={item.name} sizes="96px" className="h-28 w-20 sm:h-32 sm:w-24">
+            {category && <ProductIcon category={category} size={34} />}
+          </ArchImage>
       </Link>
 
       <div className="flex min-w-0 flex-1 flex-col justify-between">

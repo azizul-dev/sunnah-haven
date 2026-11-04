@@ -5,16 +5,15 @@ export default function SunnahReference() {
   const hadith = hadithList[0];
 
   return (
-    <section className="card-hover mt-10 rounded-2xl border border-gold/50 bg-white p-5 dark:bg-emerald-deep">
-      <h2 className="font-heading text-lg font-bold text-emerald-deep dark:text-gold">
-        {productText.sunnahTitle}
-      </h2>
-      <p dir="rtl" lang="ar" className="mt-4 font-arabic text-2xl leading-[1.9] text-emerald-deep dark:text-gold-light">
+    <div className="rounded-2xl border border-gold/40 bg-[linear-gradient(135deg,#0b3d2e,#06261c)] p-5 text-center">
+      <h3 className="font-heading text-lg font-bold text-gold">{productText.sunnahTitle}</h3>
+      <p dir="rtl" lang="ar" className="mt-4 font-arabic text-2xl leading-[1.9] text-gold-light">
         {hadith.arabic}
       </p>
-      <p className="mt-3 text-sm leading-relaxed text-text-dark dark:text-cream">{hadith.bangla}</p>
-      <p className="mt-2 text-xs text-text-muted dark:text-cream/70">{hadith.source}</p>
-      <p className="mt-3 text-[11px] text-text-muted dark:text-cream/50">{productText.sunnahNote}</p>
-    </section>
+      <div className="mx-auto my-3 h-px w-20 bg-gold/50" />
+      <p className="text-sm leading-relaxed text-cream/90">{hadith.bangla}</p>
+      <p className="mt-2 text-xs text-gold-light">{hadith.source}</p>
+      <p className="mt-3 text-[11px] text-cream/50">{productText.sunnahNote}</p>
+    </div>
   );
 }

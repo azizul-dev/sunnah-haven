@@ -1,6 +1,7 @@
 import { Lock, ShieldCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
 import SadaqahCard from "@/components/product/SadaqahCard";
+import GiftSummary from "@/components/product/GiftSummary";
 import { cartText, checkoutText, checkoutUi } from "@/data/checkout";
 import type { CartItem } from "@/lib/cart";
 import { formatPrice, toBanglaNumber } from "@/lib/format";
@@ -63,6 +64,7 @@ export default function OrderSummary({
           </div>
         </dl>
 
+        <GiftSummary />
         {roundUp > 0 && <SadaqahCard amount={roundUp} checked={sadaqah} onChange={onSadaqah} />}
 
         <Button type="submit" className="mt-5 w-full gap-2">

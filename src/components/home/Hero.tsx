@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Button from "@/components/ui/Button";
-import ArchFrame from "@/components/ui/ArchFrame";
+import ArchImage from "@/components/ui/ArchImage";
 import Container from "@/components/ui/Container";
 import ProductIcon from "@/components/ui/ProductIcon";
 import { heroSlides, homeText } from "@/data/home";
@@ -30,25 +30,29 @@ export default function Hero() {
         onScroll={handleScroll}
         className="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {heroSlides.map((slide) => (
+        {heroSlides.map((slide, index) => (
           <div key={slide.title} className="w-full shrink-0 snap-center">
-            <Container className="grid items-center gap-6 py-10 md:grid-cols-2 md:py-16">
+            <Container className="grid items-center gap-6 py-8 md:grid-cols-2 md:gap-10 md:py-14">
+              <div className="group order-1 flex justify-center md:order-2">
+                <ArchImage
+                  src={`/hero/${slide.category}.jpg`}
+                  alt={slide.title}
+                  sizes="(min-width: 768px) 420px, 90vw"
+                  priority={index === 0}
+                  className="h-80 w-full max-w-sm shadow-[0_0_50px_rgba(201,162,75,0.35)] sm:h-[26rem] md:h-[30rem] md:max-w-md"
+                >
+                  <ProductIcon category={slide.category} size={120} />
+                </ArchImage>
+              </div>
+
               <div className="order-2 text-center md:order-1 md:text-left">
-                <h1 className="font-heading text-2xl font-bold leading-snug text-gold sm:text-4xl">
+                <h1 className="font-heading text-2xl font-bold leading-snug text-gold sm:text-4xl lg:text-5xl">
                   {slide.title}
                 </h1>
-                <p className="mt-3 text-cream/80">{slide.subtitle}</p>
-                <Button
-                  href={`/shop?category=${slide.category}`}
-                  className="mt-6"
-                >
+                <p className="mt-3 text-cream/80 sm:text-lg">{slide.subtitle}</p>
+                <Button href={`/shop?category=${slide.category}`} className="mt-6">
                   {homeText.shopNow}
                 </Button>
-              </div>
-              <div className="order-1 flex justify-center md:order-2">
-                <ArchFrame className="h-56 w-44 sm:h-72 sm:w-56">
-                  <ProductIcon category={slide.category} size={72} />
-                </ArchFrame>
               </div>
             </Container>
           </div>
